@@ -24,6 +24,7 @@ Hooks.once("init", async () => {
     // Custom Sheets
     Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("abfalter", abfalterCharacterSheet, { makeDefault: true });
+    Actors.registerSheet("abfcreature", abfalterCharacterSheet)
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("abfalter", abfalterItemSheet, { makeDefault: true });
 });

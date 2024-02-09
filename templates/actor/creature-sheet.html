@@ -1,0 +1,182 @@
+<form class="baseAbfalter" autocomplete="off">
+    {{#if owner}}
+    {{!-- Sheet Header --}}
+    <header>
+        <div class="actorHeader1">
+            <div class="actorToken">
+                <img class="profile-img" src="{{actor.prototypeToken.texture.src}}" title="{{actor.name}} {{localize "abfalter.basicInfo.token"}}Token" />
+            </div>
+
+            <div class="subHeader1">
+                <div class="containerHeader">
+                    <div class="SubHeaderLeft">
+                        <div class="subHeaderRow1">
+                            <div>
+                                {{#if data.toggles.actorHeaderInfo1}}
+                                <input type="text" name="name" value="{{actor.name}}" placeholder="{{localize "abfalter.basicInfo.name"}}" />
+                                {{else}}
+                                <span>{{actor.name}}</span>
+                                {{/if}}
+                                <a class="toggleBoolean {{#if data.toggles.actorHeaderInfo1}}showOpacity{{/if}}" data-label="data.toggles.actorHeaderInfo1" data-ability="{{data.toggles.actorHeaderInfo1}}"><i class="{{#if data.toggles.actorHeaderInfo1}}fas fa-caret-up{{else}}fas fa-caret-down{{/if}}"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="subHeaderRow2">
+                            {{#if data.toggles.actorHeaderInfo1}}
+                            <label> <input type="text" name="data.gender" value="{{data.gender}}" placeholder="{{localize "abfalter.basicInfo.gender"}}" /> </label>
+                            <label> <input type="text" name="data.race" value="{{data.race}}" placeholder="{{localize "abfalter.basicInfo.race"}}" /> </label>
+                            <label> <input type="text" name="data.class" value="{{data.class}}" placeholder="{{localize "abfalter.basicInfo.class"}}" /> </label>
+                            <label> <input type="number" name="data.level" value="{{data.level}}" readonly /> </label>
+                            {{else}}
+                            <span>{{data.gender}} | {{data.race}} | {{data.class}} | {{localize "abfalter.basicInfo.level"}}: {{data.level}} </span>
+                            {{/if}}
+                        </div>
+
+                        <div class="subHeaderRow2Half">
+                            {{#if data.toggles.actorHeaderInfo1}}
+                            <label> <input type="text" name="data.height" value="{{data.height}}" placeholder="{{localize "abfalter.basicInfo.height"}}" /> </label>
+                            <label> <input type="text" name="data.weight" value="{{data.weight}}" placeholder="{{localize "abfalter.basicInfo.weight"}}" /> </label>
+                            <label> <input type="text" name="data.age" value="{{data.age}}" placeholder="{{localize "abfalter.basicInfo.age"}}" /> </label>
+                            {{else}}
+                            <span>{{localize "abfalter.basicInfo.height"}}: {{data.height}} | {{localize "abfalter.basicInfo.weight"}}: {{data.weight}} | {{localize "abfalter.basicInfo.age"}}: {{data.age}} </span>
+                            {{/if}}
+                        </div>
+
+                        <div class="subHeaderRow3">
+                            <span>{{localize "abfalter.armoryTab.presence"}}: {{data.presence}} | {{localize "abfalter.basicInfo.dp"}}: {{data.dp}}</span>
+                            <label> <input type="number" name="data.experience" value="{{data.experience}}" placeholder="{{localize "abfalter.basicInfo.exp"}}" /> </label>
+                            <span> / </span>
+                            <span> {{data.nextlevel}} </span>
+                            <span> {{localize "abfalter.basicInfo.exp"}} </span>
+                            <label class="levelUpBox">
+                                <a> <i class="fas fa-cog"></i> </a>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="SubHeaderRight">
+                        <div class="subRightHeader1">
+                            {{#if data.toggles.actorHeaderInfo1}}
+                            <label> <input type="text" name="data.size" value="{{data.size}}" placeholder="{{localize "abfalter.basicInfo.size"}}" /> </label>
+                            <label> <input type="text" name="data.appearance" value="{{data.appearance}}" placeholder="{{localize "abfalter.basicInfo.appear"}}" /> </label>
+                            {{else}}
+                            <span>{{localize "abfalter.basicInfo.size"}}: {{data.size}} | {{localize "abfalter.basicInfo.appear"}}: {{data.appearance}} </span>
+                            {{/if}}
+                            <!--TO DO-->
+                            <div class="hidden">
+                                <button>
+                                    Rest
+                                </button>
+                            </div>
+                            <div class="hidden">
+                                <button>
+                                    Meditation
+                                </button>
+                            </div>
+                            <!--End TO DO-->
+                        </div>
+
+                        <div class="subRightHeader2">
+                            <div class="subRightLeft">
+                                <h5>
+                                    {{localize "abfalter.generalTab.initiative"}}
+                                    <label>
+                                        <a class="toggleBoolean {{#if data.initiative.status}}showOpacity{{/if}}" data-label="data.initiative.status" data-ability="{{data.initiative.status}}"><i class="{{#if data.initiative.status}}fas fa-caret-up{{else}}fas fa-caret-down{{/if}}"></i></a>
+                                    </label>
+                                </h5>
+                                {{#if data.initiative.status}}
+                                <div class="headerIniDets">
+                                    <label> <span> {{localize "abfalter.armoryTab.armor"}} </span> <input type="number" name="data.totalNatPen" value="-{{data.totalNatPen}}" readonly /> </label>
+                                    <label> <span> {{localize "abfalter.generalTab.weapon"}} </span> <input type="number" name="data.wepFinSpd" value="{{data.wepFinSpd}}" readonly /> </label>
+                                    <label> <span> {{localize "abfalter.basicInfo.class"}} </span> <input type="number" name="data.inibonus" value="{{data.inibonus}}" readonly /> </label>
+                                    <label> <span> {{localize "abfalter.basicInfo.spec"}} </span> <input type="number" name="data.initiative.spec" value="{{data.initiative.spec}}" /> </label>
+                                </div>
+                                {{else}}
+                                <div class="headerIni">
+                                    <span> {{data.weaponName}} </span>
+                                    <div>
+                                        <!--TO DO-->
+                                        <button>
+                                            <span> {{data.iniFinal}} </span>
+                                        </button>
+                                        <!--End TO DO-->
+                                    </div>
+                                </div>
+                                {{/if}}
+                            </div>
+
+                            <div class="subRightMid {{#if data.toggles.shield}}{{else}}hidden{{/if}}">
+                                <h5>
+                                    {{localize "abfalter.basicInfo.shield"}}
+                                </h5>
+                                <div>
+                                    <label> <span> {{localize "abfalter.basicInfo.maximum"}}: </span> <input type="number" name="data.shield.max" value="{{data.shield.max}}" /> </label>
+                                    <label> <span> {{localize "abfalter.basicInfo.actual"}}: </span> <input type="number" name="data.shield.value" value="{{data.shield.value}}" /> </label>
+                                </div>
+                            </div>
+
+                            <div class="subRightRight">
+                                <h5>
+                                    {{localize "abfalter.basicInfo.aamShort"}}
+                                </h5>
+                                <div class="headerAam">
+                                    <label><span>{{localize "abfalter.basicInfo.base"}}</span><input type="number" name="data.aam" value="{{data.aam}}" /></label>
+                                    <label><span>{{localize "abfalter.basicInfo.boons"}}</span><input type="number" name="data.aamBoon" value="{{data.aamBoon}}" /></label>
+                                    <label><span>{{localize "abfalter.basicInfo.critical"}}</span><input type="number" name="data.aamCrit" value="{{data.aamCrit}}" /></label>
+                                    <label><span>{{localize "abfalter.basicInfo.aamShort"}}: </span> <span>{{data.aamFinal}} </span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs navTabsYes" data-group="primary">
+        <ul>
+            <li><a class="item" data-tab="general"><span>{{localize "abfalter.basicInfo.general"}}</span></a></li>
+            <li class="{{#if data.toggles.backgroundTab}}hidden{{/if}}"><a class="item" data-tab="background"><span>{{localize "abfalter.basicInfo.background"}}</span></a></li>
+            <li class="{{#if data.toggles.magicTab}}hidden{{/if}}"><a class="item" data-tab="magic"><span>{{localize "abfalter.basicInfo.magic"}}</span></a></li>
+            <li class="{{#if data.toggles.psychicTab}}hidden{{/if}}"><a class="item" data-tab="psychic"><span>{{localize "abfalter.basicInfo.psychic"}}</span></a></li>
+            <li class="{{#if data.toggles.kiTab}}hidden{{/if}}"><a class="item" data-tab="ki"><span>{{localize "abfalter.basicInfo.ki"}}</span></a></li>
+            <li><a class="item" data-tab="armory"><span>{{localize "abfalter.basicInfo.armory"}}</span></a></li>
+            <li class="{{#if data.toggles.bioTab}}hidden{{/if}}"><a class="item" data-tab="bio"><span>{{localize "abfalter.basicInfo.bio"}}</span></a></li>
+            <li><a class="item" data-tab="settings"><span>{{localize "abfalter.basicInfo.settings"}}</span></a></li>
+        </ul>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        {{!-- Sheet Location Tab --}}
+        <div class="tab general" data-group="primary" data-tab="general">
+{{> systems/abfalter/templates/actor/parts/general.html }}
+        </div>
+        <div class="tab bio" data-group="primary" data-tab="bio">
+{{> systems/abfalter/templates/actor/parts/bio.html }}
+        </div>
+        <div class="tab magic" data-group="primary" data-tab="magic">
+{{> systems/abfalter/templates/actor/parts/magic.html }}
+        </div>
+        <div class="tab psychic" data-group="primary" data-tab="psychic">
+{{> systems/abfalter/templates/actor/parts/psychic.html }}
+        </div>
+        <div class="tab ki" data-group="primary" data-tab="ki">
+{{> systems/abfalter/templates/actor/parts/ki.html }}
+        </div>
+        <div class="tab armory" data-group="primary" data-tab="armory">
+{{> systems/abfalter/templates/actor/parts/armory.html }}
+        </div>
+        <div class="tab background" data-group="primary" data-tab="background">
+{{> systems/abfalter/templates/actor/parts/background.html }}
+        </div>
+        <div class="tab settings" data-group="primary" data-tab="settings">
+{{> systems/abfalter/templates/actor/parts/settings.html }}
+        </div>
+    </section>
+    {{else}}
+{{> systems/abfalter/templates/actor/parts/bio.html }}
+    {{/if}}
+</form>
+
