@@ -1,6 +1,6 @@
 import { openModifierDialogue } from "../diceroller.js";
 
-export default class abfalterCharacterSheet extends ActorSheet {
+export default class abfalterCreatureSheet extends ActorSheet {
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             classes: ["abfcreature", "sheet", "actor"],
@@ -97,11 +97,11 @@ export default class abfalterCharacterSheet extends ActorSheet {
 
         //Initialize Items
         sheetData.inventories = baseData.items.filter(function (item) { return item.type == "inventory" });
-        sheetData.weapons = baseData.items.filter(function (item) { return item.type == "weapon" });
-        sheetData.armors = baseData.items.filter(function (item) { return item.type == "armor" });
-        sheetData.armorHelmets = baseData.items.filter(function (item) { return item.type == "armorHelmet" });
-        sheetData.advantages = baseData.items.filter(function (item) { return item.type == "advantage" });
-        sheetData.disadvantages = baseData.items.filter(function (item) { return item.type == "disadvantage" });
+        // sheetData.weapons = baseData.items.filter(function (item) { return item.type == "weapon" });
+        // sheetData.armors = baseData.items.filter(function (item) { return item.type == "armor" });
+        // sheetData.armorHelmets = baseData.items.filter(function (item) { return item.type == "armorHelmet" });
+        // sheetData.advantages = baseData.items.filter(function (item) { return item.type == "advantage" });
+        // sheetData.disadvantages = baseData.items.filter(function (item) { return item.type == "disadvantage" });
         sheetData.spells = baseData.items.filter(function (item) { return item.type == "spell" });
         sheetData.classes = baseData.items.filter(function (item) { return item.type == "class" });
         sheetData.spellPaths = baseData.items.filter(function (item) { return item.type == "spellPath" });
@@ -116,11 +116,7 @@ export default class abfalterCharacterSheet extends ActorSheet {
         sheetData.mentalPatterns = baseData.items.filter(function (item) { return item.type == "mentalPattern" });
         sheetData.psychicMatrixs = baseData.items.filter(function (item) { return item.type == "psychicMatrix" });
         sheetData.maintPowers = baseData.items.filter(function (item) { return item.type == "maintPower" });
-        sheetData.kiSealCreatures = baseData.items.filter(function (item) { return item.type == "kiSealCreature" });
-        sheetData.kiTechniques = baseData.items.filter(function (item) { return item.type == "kiTechnique" });
-        sheetData.martialArts = baseData.items.filter(function (item) { return item.type == "martialArt" });
-        sheetData.arsMagnuses = baseData.items.filter(function (item) { return item.type == "arsMagnus" });
-        sheetData.elans = baseData.items.filter(function (item) { return item.type == "elan" });
+        // sheetData.kiSealCreatures = baseData.items.filter(function (item) { return item.type == "kiSealCreature" });
 
         return sheetData;
     }
@@ -222,12 +218,12 @@ export default class abfalterCharacterSheet extends ActorSheet {
         const type = element.dataset.type;
 
         const types = {
-            "inventory": game.i18n.localize("abfalter.sheet.inventory"),
-            "weapon": game.i18n.localize("abfalter.sheet.weapon"),
-            "armor": game.i18n.localize("abfalter.sheet.armor"),
-            "armorHelmet": game.i18n.localize("abfalter.sheet.armorHelmet"),
-            "advantage": game.i18n.localize("abfalter.sheet.advantage"),
-            "disadvantage": game.i18n.localize("abfalter.sheet.disadvantage"),
+            // "inventory": game.i18n.localize("abfalter.sheet.inventory"),
+            // "weapon": game.i18n.localize("abfalter.sheet.weapon"),
+            // "armor": game.i18n.localize("abfalter.sheet.armor"),
+            // "armorHelmet": game.i18n.localize("abfalter.sheet.armorHelmet"),
+            // "advantage": game.i18n.localize("abfalter.sheet.advantage"),
+            // "disadvantage": game.i18n.localize("abfalter.sheet.disadvantage"),
             "spell": game.i18n.localize("abfalter.sheet.spell"),
             "class": game.i18n.localize("abfalter.sheet.class"),
             "spellPath": game.i18n.localize("abfalter.sheet.spellPath"),
