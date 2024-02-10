@@ -141,7 +141,7 @@
             <li class="{{#if data.toggles.psychicTab}}hidden{{/if}}"><a class="item" data-tab="psychic"><span>{{localize "abfalter.basicInfo.psychic"}}</span></a></li>
             <li class="{{#if data.toggles.kiTab}}hidden{{/if}}"><a class="item" data-tab="ki"><span>{{localize "abfalter.basicInfo.ki"}}</span></a></li>
             <li><a class="item" data-tab="armory"><span>{{localize "abfalter.basicInfo.armory"}}</span></a></li>
-            <li class="{{#if data.toggles.bioTab}}hidden{{/if}}"><a class="item" data-tab="bio"><span>{{localize "abfalter.basicInfo.bio"}}</span></a></li>
+            <li class="{{#if data.toggles.creatureBioTab}}hidden{{/if}}"><a class="item" data-tab="creatureBio"><span>{{localize "abfalter.basicInfo.bio"}}</span></a></li>
             <li><a class="item" data-tab="settings"><span>{{localize "abfalter.basicInfo.settings"}}</span></a></li>
         </ul>
     </nav>
@@ -152,8 +152,8 @@
         <div class="tab general" data-group="primary" data-tab="general">
 {{> systems/abfalter/templates/actor/parts/general.html }}
         </div>
-        <div class="tab bio" data-group="primary" data-tab="bio">
-{{> systems/abfalter/templates/actor/parts/bio.html }}
+        <div class="tab bio" data-group="primary" data-tab="creatureBio">
+{{> systems/abfalter/templates/actor/parts/creatureBio.html }}
         </div>
         <div class="tab magic" data-group="primary" data-tab="magic">
 {{> systems/abfalter/templates/actor/parts/magic.html }}
@@ -175,7 +175,7 @@
         </div>
     </section>
     {{else}}
-{{> systems/abfalter/templates/actor/parts/bio.html }}
+{{> systems/abfalter/templates/actor/parts/creatureBio.html }}
     {{/if}}
 </form>
 

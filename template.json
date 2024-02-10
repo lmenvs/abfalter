@@ -19,6 +19,8 @@
         },
         "notesOne": "",
         "notesTwo": "",
+        "creatureBio": "",
+        "creatureModus": "",
         "destiny": 0,
         "gnosis": 0,
         "rollRange": {
@@ -72,6 +74,7 @@
           "magicTab": false,
           "psychicTab": false,
           "kiTab": false,
+          "creatureBioTab": false,
           "bioTab": false,
           "shield": false,
           "magicTheoryVis": false,
@@ -1362,7 +1365,9 @@
       "dailyMaint",
       "maintPower",
       "currency",
-      "proficiency"
+      "proficiency",
+      "creatureAdvantages",
+      "creatureDisadvantages"
     ],
     "templates": {
       "itemDescription": {
@@ -1782,6 +1787,18 @@
           "templates": [ "elanGift" ]
         }
       }
-    }
+    },
+    "creatureAdvantages":{
+      "templates": [ "itemDescription" ],
+      "essentialAbility": "",
+      "costDP": 0,
+      "requiredGnosis": 0
+    },
+    "creatureDisadvantages":{
+      "templates": [ "itemDescription" ],
+      "essentialAbility": "",
+      "benefitDP": 0,
+      "requiredGnosis": 0
+    } 
   }
 }

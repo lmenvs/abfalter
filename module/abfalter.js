@@ -6,6 +6,7 @@ import abfalterItem from "./item/abfalterItem.js";
 import abfalterItemSheet from "./item/abfalterItemSheet.js";
 import abfalterActor from "./actor/abfalterActor.js";
 import abfalterCharacterSheet from "./actor/abfalterCharacterSheet.js";
+import abfalterCreatureSheet from "./actor/abfalterCreatureSheet.js";
 import { registerCustomMacros } from "./autoCombat/registerCustomMacros.js";
 import { customMacroBar } from "./autoCombat/customMacroBar.js";
 import { abfalterSettings } from "./utilities/abfalterSettings.js";
@@ -24,7 +25,7 @@ Hooks.once("init", async () => {
     // Custom Sheets
     Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("abfalter", abfalterCharacterSheet, { makeDefault: true });
-    Actors.registerSheet("abfcreature", abfalterCharacterSheet)
+    Actors.registerSheet("abfcreature", abfalterCreatureSheet, { makeDefault: false});
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("abfalter", abfalterItemSheet, { makeDefault: true });
 });

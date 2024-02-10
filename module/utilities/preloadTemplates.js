@@ -9,6 +9,8 @@ export const preloadHandlebarsTemplates = () => {
         templates.dialog.combat.combatAttackDialog.parts.combat,
         templates.dialog.combat.combatAttackDialog.parts.mystic,
         // actor sheets
+        "systems/abfalter/templates/actor/parts/creature-bio.html",
+         "systems/abfalter/templates/actor/parts/creature-general.html",
         "systems/abfalter/templates/actor/parts/bio.html",
         "systems/abfalter/templates/actor/parts/general.html",
         "systems/abfalter/templates/actor/parts/background.html",
